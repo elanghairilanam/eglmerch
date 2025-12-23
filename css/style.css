@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -21,6 +22,8 @@ a {
   width: 100%;
   text-decoration: none;
   display: block;
+  color: black;
+  text-align: center;
 }
 
 body {
@@ -88,6 +91,169 @@ body {
   bottom: 0;
   left: var(--afterLeft, 0);
   transition: 0.3s linear 0.3s;
+}
+.container .header .side-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  display: none;
+  padding: 0 10px;
+  padding-top: 5px;
+}
+.container .header .side-menu .search {
+  display: none;
+  grid-template-areas: "header" "trending" "history";
+  height: 40vh;
+}
+.container .header .side-menu .search .search-header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: "up" "down";
+  row-gap: 5px;
+  position: relative;
+}
+.container .header .side-menu .search .search-header .up-section {
+  grid-area: up;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  align-items: center;
+}
+.container .header .side-menu .search .search-header .up-section .back-btn {
+  cursor: pointer;
+}
+.container .header .side-menu .search .search-header .up-section .input-box {
+  position: relative;
+}
+.container .header .side-menu .search .search-header .up-section .input-box .search-icon {
+  left: 5px;
+  width: 24px;
+  position: absolute;
+  display: block;
+}
+.container .header .side-menu .search .search-header .up-section .input-box .search-icon.active {
+  display: none;
+}
+.container .header .side-menu .search .search-header .up-section .input-box .input-area {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  outline: none;
+  padding-left: 30px;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  height: 3rem;
+  font-size: 2rem;
+  width: 100%;
+}
+.container .header .side-menu .search .search-header .up-section .input-box .input-area:focus {
+  border: 0.5px solid blue;
+}
+.container .header .side-menu .search .search-header .up-section .input-box .btn-cancel {
+  display: none;
+}
+.container .header .side-menu .search .search-header .up-section .input-box .btn-cancel.active {
+  position: absolute;
+  right: -135px;
+  display: block;
+}
+.container .header .side-menu .search .search-header .bottom-section {
+  grid-area: down;
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.container .header .side-menu .search .search-header .bottom-section .menu-item {
+  width: 24px;
+  cursor: pointer;
+  position: relative;
+  font-size: 0.8rem;
+}
+.container .header .side-menu .search .search-header .bottom-section .toko::after, .container .header .side-menu .search .search-header .bottom-section .faq::after {
+  content: "Toko";
+  display: block;
+  position: absolute;
+  left: 0.4rem;
+}
+.container .header .side-menu .search .search-header .bottom-section .faq::after {
+  content: "FAQ";
+}
+.container .header .side-menu .search .search-header .line {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background-color: lightgray;
+  margin-top: 20px;
+}
+.container .header .side-menu .search .trending {
+  grid-area: trending;
+  display: grid;
+}
+.container .header .side-menu .search .trending h2 {
+  color: black;
+  font-weight: 100;
+}
+.container .header .side-menu .search .trending .trend {
+  display: grid;
+  grid-auto-flow: column;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.container .header .side-menu .search .trending .trend .trend-item {
+  display: grid;
+  align-items: center;
+  width: 100px;
+  height: 25px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  position: relative;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding-left: 10px;
+}
+.container .header .side-menu .search .trending .trend .trend-item.dragging {
+  border: 1px solid black;
+}
+.container .header .side-menu .search .trending .trend .trend-item:last-of-type {
+  width: 60px;
+}
+.container .header .side-menu .search .trending .trend .trend-item img {
+  width: 15px;
+  position: absolute;
+  left: 3px;
+}
+.container .header .side-menu .search .history {
+  grid-area: history;
+  display: grid;
+  grid-template-areas: "title icon" "line line" "history history";
+  grid-template-columns: 1fr 0.01fr;
+}
+.container .header .side-menu .search .history h2 {
+  color: black;
+  font-weight: 100;
+}
+.container .header .side-menu .search .history .title {
+  grid-area: title;
+}
+.container .header .side-menu .search .history .icon {
+  grid-area: icon;
+  width: 20px;
+  height: 20px;
+}
+.container .header .side-menu .search .history .line {
+  grid-area: line;
+  height: 1px;
+  background-color: lightgray;
+}
+.container .header .side-menu .search .history .hist {
+  grid-area: history;
 }
 .container .women, .container .men, .container .kids, .container .baby {
   grid-area: women;

@@ -1,11 +1,21 @@
 
-      const category = document.querySelector('.category');
-      const categoryLinks = document.querySelectorAll('.category a')
-      const container = document.querySelector('.container');
+      
+      const inputArea = document.getElementById('input-area');
+      const inputBox = document.querySelector(".input-box")
+      const searchIcon = document.querySelector(".search-icon");
+      const btnCancel = document.querySelector(".btn-cancel");
 
-      const sections = document.querySelectorAll("section")
+      
+      const category = document.querySelector(".category");
+      const categoryLinks = document.querySelectorAll(".category a");
+      const container = document.querySelector(".container");
+      const sections = document.querySelectorAll("section");
       const sectionWidth = sections[0].offsetWidth;
 
+
+
+
+      // function scroll
       function goToSection(id) {
         const target = document.getElementById(id);
 
@@ -28,3 +38,46 @@
          category.style.setProperty("--afterWidth", `${width}px`);
          category.style.setProperty("--afterLeft", `${left}px`);
       })
+      // end function scroll
+
+      // search section on side bar
+      // hide icon search when focus input area and show when blur
+      inputArea.addEventListener('blur', ()=>{
+
+        searchIcon.classList.toggle("active");
+        // menggembalikan placeholder saat blur
+        inputArea.style.paddingLeft = "30px";
+      });
+
+      inputArea.addEventListener('focus', ()=>{
+        searchIcon.classList.toggle("active");
+        // menggeser placeholder ke kiri saat focus
+        inputArea.style.paddingLeft = "10px";
+      });
+
+      // show btn cancel when user type in input area
+      inputArea.addEventListener("input",()=>{
+        btnCancel.classList.toggle("active");
+      })
+
+      // clear input when btn cancel is ckliked
+      btnCancel.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        inputArea.value = "";
+        btnCancel.classList.toggle("active");
+      })
+
+      // shiw search menu
+      const sideMenu = document.querySelector(".side-menu")
+
+      function showSearchMenu() {
+        const search = document.querySelector(".search")
+
+        if (sideMenu && search) {
+          sideMenu.style.display = "grid";
+          search.style.display = "grid";
+        }
+      }
+
+
+      // end search section on side bar
