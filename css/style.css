@@ -195,7 +195,6 @@ body {
 .container .header .side-menu .search .trending h1 {
   color: black;
   font-size: 1.1rem;
-  font-weight: bold;
 }
 .container .header .side-menu .search .trending .trend {
   display: grid;
