@@ -233,6 +233,7 @@ body {
   grid-area: history;
   display: grid;
   grid-template-areas: "title icon" "line line" "history history";
+  align-items: center;
   grid-template-columns: 1fr 0.01fr;
 }
 .container .header .side-menu .search .history h1 {
