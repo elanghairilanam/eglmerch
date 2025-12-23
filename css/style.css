@@ -194,7 +194,6 @@ body {
 }
 .container .header .side-menu .search .trending h1 {
   color: black;
-  font-weight: 100;
   font-size: 1.1rem;
 }
 .container .header .side-menu .search .trending .trend {
@@ -238,7 +237,6 @@ body {
 }
 .container .header .side-menu .search .history h1 {
   color: black;
-  font-weight: 100;
   font-size: 1.1rem;
 }
 .container .header .side-menu .search .history .title {
