@@ -7,10 +7,9 @@
 
       
       const category = document.querySelector(".category");
-      const categoryLinks = document.querySelectorAll(".category a");
+      const categoryLinks = document.querySelectorAll(".category li");
       const container = document.querySelector(".container");
-      const sections = document.querySelectorAll("section");
-      const sectionWidth = sections[0].offsetWidth;
+      const sectionWidth = container.offsetWidth;
 
 
 
@@ -27,6 +26,7 @@
       container.addEventListener('scroll', ()=>{
 
          const index = Math.round(container.scrollLeft / sectionWidth);
+         
          const activeLink = categoryLinks[index];
 
          const rect = activeLink.getBoundingClientRect();
