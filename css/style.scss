@@ -116,7 +116,8 @@ body{
             display: none;
             padding: 0 10px;
             padding-top: 5px;
-            overflow-y: hidden;
+            box-sizing: border-box;
+            overflow: hidden;
 
             .search{
 
